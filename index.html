@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>		
+		<meta charset="utf-8"/>
+		<link rel="icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="style.css" media="all" rel="stylesheet">
+		<title>Color Contrast Ratio Tool</title>
+	</head>
+	<body>
+		<div class="toolbar flex-container">
+			<div class="settings menu">
+				<div class="settings button">
+					<i class="material-icons">settings</i>
+				</div>
+			</div>
+			<div class="color-tools">
+				<div class="color-swatch">
+					<div class="color-title"><h3 class="thin">Primary</h3></div>
+					<div class="color-input-selector">
+						<input class="color-input" type="color" id="primary-color-input" name="primary-color" value="#1793ec"/>
+					</div>
+					<div class="color-text-value">
+						<span class="hash">#</span>
+						<input class="color-text-input" type="text" id="primary-text-input" name="primary-text" value="1793ec" placeholder="ffffff" size="6" min="3" maxlength="6" >
+					</div>
+				</div>
+				<div class="primary color-results">
+					<div class="color-filter"><i class="material-icons medium-text animate">filter_b_and_w</i></div>
+					<div class="color-ratio"><p class="medium-text">3.0</p></div>
+					<div class="color-sentiment"><i class="material-icons medium-text">sentiment_very_satisfied</i></div>
+				</div>
+			</div>
+			<div class="color-tools">
+				<div class="color-swatch">
+					<div class="color-title"><h3 class="thin">Background</h3></div>
+					<div class="color-input-selector">
+						<input class="color-input" type="color" id="background-color-input" name="background-color" value="#f5f5f5"/>
+					</div>
+					<div class="color-text-value">
+						<span class="hash">#</span>
+						<input class="color-text-input" type="text" id="background-text-input" name="background-text" value="f5f5f5" placeholder="ffffff" size="6" min="3"  maxlength="6" >
+					</div>
+				</div>				
+			</div>
+			<div class="color-tools">
+				<div class="secondary color-results">
+					<div class="color-sentiment"><i class="material-icons medium-text">sentiment_very_satisfied</i></div>		
+					<div class="color-ratio"><p class="medium-text">3.0</p></div>
+					<div class="color-filter"><i class="material-icons medium-text animate">filter_b_and_w</i></div>					
+				</div>				
+				<div class="color-swatch">
+					<div class="color-title"><h3 class="thin">Secondary</h3></div>
+					<div class="color-input-selector">
+						<input class="color-input" type="color" id="secondary-color-input" name="secondary-color" value="#3c9d87"/>
+					</div>
+					<div class="color-text-value">
+						<span class="hash">#</span>
+						<input class="color-text-input" type="text" id="secondary-text-input" name="secondary-text" value="3c9d87" placeholder="3c9d87" size="6" min="3" maxlength="6" >
+					</div>
+				</div>					
+			</div>			
+			<div class="help menu">				
+				<div class="helper overlay">
+					<header class="helper-header">						
+						<div class="helper-title">
+							<h3>Find a set of colors with a nice contrast!</h3>
+							<h5>Values greater than 3 are your target</h5>
+						</div>
+					</header>
+					<main class="helper-main">
+						<ul>
+							<li>Click on a color row to change the background</li>
+							<li>Alt + click on color row to set Primary or Secondary for respective column</li>
+							<li>Click the <i class="material-icons medium-text animate">filter_b_and_w</i> to filter colors against table values greater than 3</li>
+							<li>Set manual input from toolbar</li>														
+							<li>Read more from <a href="https://www.w3.org/TR/WCAG/#visual-audio-contrast" target="_blank">w3</a></li>
+						</ul>
+					</main>
+					<footer class="helper-foot">
+						by <a href="http://watthem.github.io" target="_blank">watthem</a>
+					</footer>
+				</div>
+				<div class="help button">
+					<i class="material-icons">help</i>
+				</div>
+			</div>
+		</div>		
+		<div class="central-content container">
+			<div class="primary preview-text container left">
+				<label for="primary-color" class="primary-color-text-input"/>
+				<h1>I am heading 1</h1>
+				<h2>I am heading 2</h2>
+				<h3>I am heading 3</h3>
+				<h4>I am heading 4</h4>
+				<h5>I am heading 5</h5>
+				<p>I am para text</p>
+				<div><small>I am small text</small></div>
+				<div><strong>I am strong text</strong></div>
+				<div><kbd>I am kbd text</kbd></div>
+				<div><b>I am bold text</b></div>
+				<div><i>I am italic text</i></div>
+				<div style="font-style: normal; font-weight: 100;">I am thin text</div>
+				<div style="font-style: italic; font-weight: 100;">I am thin italic text</div>
+				<div style="font-style: normal; font-weight: 300;">I am light text</div>
+				<div style="font-style: italic; font-weight: 300;">I am light italic text</div>
+				<div style="font-style: normal; font-weight: 400;">I am regular text</div>
+				<div style="font-style: italic; font-weight: 400;">I am regular italic text</div>
+				<div style="font-style: normal; font-weight: 700;">I am bold text</div>
+				<div style="font-style: italic; font-weight: 700;">I am bold italic text</div>
+				<div style="font-style: normal; font-weight: 900;">I am black text</div>
+				<div style="font-style: italic; font-weight: 900;">I am black italic text</div>
+			</div>
+			<div class="tables container">
+				<div class="color-table center">		
+				</div>
+			</div>
+			<div class="secondary preview-text container right">
+				<label for="secondary-color" class="secondary-color-text-input"/>
+				<h1>I am heading 1</h1>
+				<h2>I am heading 2</h2>
+				<h3>I am heading 3</h3>
+				<h4>I am heading 4</h4>
+				<h5>I am heading 5</h5>
+				<p>I am para text</p>
+				<div><small>I am small text</small></div>
+				<div><strong>I am strong text</strong></div>
+				<div><kbd>I am kbd text</kbd></div>
+				<div><b>I am bold text</b></div>
+				<div><i>I am italic text</i></div>
+				<div style="font-style: normal; font-weight: 100;">I am thin text</div>
+				<div style="font-style: italic; font-weight: 100;">I am thin italic text</div>
+				<div style="font-style: normal; font-weight: 300;">I am light text</div>
+				<div style="font-style: italic; font-weight: 300;">I am light italic text</div>
+				<div style="font-style: normal; font-weight: 400;">I am regular text</div>
+				<div style="font-style: italic; font-weight: 400;">I am regular italic text</div>
+				<div style="font-style: normal; font-weight: 700;">I am bold text</div>
+				<div style="font-style: italic; font-weight: 700;">I am bold italic text</div>
+				<div style="font-style: normal; font-weight: 900;">I am black text</div>
+				<div style="font-style: italic; font-weight: 900;">I am black italic text</div>				
+			</div>
+		</div>
+	</body>
+	<script src="app.js"></script>
+</html>

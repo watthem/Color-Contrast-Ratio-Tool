@@ -1,0 +1,412 @@
+body
+{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    text-align: center;
+
+    background-color: var(--background);
+}
+.flex-container
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.thin
+{
+    margin: 0;
+}
+.overlay
+{
+    display: none;
+}
+.overlay.shown
+{
+    display: block;
+}
+
+/*toolbar elements*/
+.toolbar
+{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+
+    width: 100%;
+    height: 160px;
+
+    background-color: white;
+    box-shadow: 0 0 2vmin 0 rgba(0, 0, 0, 0.75);
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.menu
+{
+    font-size: 3rem;
+
+    -webkit-box-flex: 0;
+    -ms-flex: 0 12%;
+        flex: 0 12%;
+}
+.color-tools
+{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 33%;
+        flex: 1 33%;
+}
+.color-input-selector
+{
+    height: calc(160px / 3);
+}
+.color-input
+{
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+    outline: none;
+}
+.primary
+{
+    color: #1793ec;
+}
+.secondary
+{
+    color: #3c9d87;
+}
+.color-ratio
+{
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.color-display > .color-ratio
+{
+    -webkit-transition: 2s ease-out;
+            transition: 2s ease-out;
+
+    opacity: 0.5;
+}
+.color-display > .color-ratio:hover
+{
+    -webkit-transition: 0s;
+            transition: 0s;
+
+    opacity: 1;
+}
+::-webkit-color-swatch
+{
+    border: none;
+}
+::-webkit-color-swatch-wrapper
+{
+    padding: 0;
+}
+::-moz-color-swatch,
+::-moz-focus-inner
+{
+    border: none;
+}
+::-moz-focus-inner
+{
+    padding: 0;
+}
+.color-text-value
+{
+    font-size: 1.7rem;
+
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    border-bottom: 0.25rem solid black;
+}
+.hash
+{
+    padding-right: 0.25rem;
+}
+.color-text-input
+{
+    font-size: 1.7rem;
+    font-weight: 500;
+
+    cursor: pointer;
+    text-align: left;
+    letter-spacing: 0.5rem;
+    text-transform: lowercase;
+
+    opacity: 0.6;
+    border: none;
+    outline: none;
+}
+.color-text-input:focus
+{
+    font-weight: 1000;
+}
+.color-results
+{
+    font-size: 2rem;
+
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+.material-icons
+{
+    font-size: 100%; /*override Material+Icons default style to fit to parent element font size*/
+}
+
+/** {
+    border: 1px dotted purple
+}*/
+.central-content
+{
+    position: relative;
+    top: 160px;
+
+    width: 100%;
+    margin: 0;
+}
+.preview-text
+{
+    font-size: var(--font-size);
+
+    position: fixed;
+    top: inherit;
+
+    overflow-y: hidden;
+
+    width: 25%;
+    height: calc(100% - 160px);
+}
+.left
+{
+    left: 0;
+}
+.right
+{
+    right: 0;
+}
+.center
+{
+    width: 50%;
+    margin: auto;
+}
+.color-table
+{
+    box-shadow: 1px 0 10px 4px rgba(33, 33, 33, 0.33);
+}
+.table-row
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    cursor: pointer;
+
+    opacity: 1;
+    background-color: white;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.row-cell
+{
+    display: inline-block;
+    overflow: hidden;
+
+    padding: 3%;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+}
+.color-display
+{
+    min-width: 35%;
+    padding: 25px;
+
+    box-shadow: 12px 12px 1px -10px rgba(30, 30, 30, 0.33) inset;
+}
+.animate
+{
+    transition: 1s ease transform;
+}
+.color-filter
+{
+    cursor: pointer;
+    opacity: .2;
+}
+.color-filter.active {
+    opacity: 1;
+}
+.color-filter.active > .animate
+{
+    transform: rotate(180deg) scaleX(-1);
+}
+.button
+{
+    color: #b1b1b1;
+}
+.help.button
+{
+    cursor: pointer;
+    transition: 1s ease;
+}
+.help.button:hover
+{
+    color: #3c9d87;
+}
+.helper
+{
+    font-size: medium;
+
+    position: fixed;
+    top: 20%;
+    right: 0;
+
+    display: none;
+
+    width: 33%;
+    min-width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+
+    text-decoration: none;
+
+    opacity: 0;
+    color: #363636;
+    border-radius: 4px;
+    background: #fefff9;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.45) 0 0 20px 0;
+}
+ul
+{
+    list-style: none;
+}
+.helper.shown
+{
+    display: block;
+
+    transition: opacity 500ms ease-in-out;
+
+    opacity: 0.9;
+}
+.helper div
+{
+    display: block;
+}
+.helper .helper-main
+{
+    width: auto;
+    margin: auto;
+}
+.helper .helper-header
+{
+    position: relative;
+
+    overflow: hidden;
+
+    height: 175px;
+
+    border-radius: 4px 4px 0 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    background-blend-mode: overlay;
+}
+.helper .helper-title
+{
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    padding: 3.5% 0 2.5% 0;
+
+    text-transform: uppercase;
+
+    color: white;
+    background: #3c9d87;
+}
+.helper .helper-title h3
+{
+    font-size: 1.2em;
+    line-height: 1.2;
+
+    margin: 0;
+    padding: 0 3.5%;
+}
+.helper .helper-foot
+{
+    font-size: 0.78em;
+
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+
+    overflow: hidden;
+
+    max-height: 0;
+    padding: 0 5%;
+
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.4s;
+    transition-property: max-height;
+    text-transform: lowercase;
+
+    color: #666;
+}
+.helper:hover .helper-foot,
+.helper:focus .helper-foot
+{
+    max-height: 1em;
+}
+.helper.shown ~ .help.button
+{
+    transform: scale(1.5);
+
+    color: #3c9d87;
+}
+
+.settings.button {
+    opacity: 0;
+}
